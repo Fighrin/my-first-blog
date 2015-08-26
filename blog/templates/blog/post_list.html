@@ -2,10 +2,24 @@
     <head>
     	<title>Catgirl's awesome blog</title>
     </head>
+
     <body>
+    <div>
+    	<h1><a href="/">Catgirl's awesome blog</a></h1>
+    </div>
+
+    <div>
     	<p><em>Hello, stranger!</em></p>
     	<p><strong>Take some tea :3</strong></p>
+    </div>
     	
+	{% for post in posts %}
+		<div>
+    		<p>published: {{ post.published_date }}</p>
+    		<h2><a href="">{{ post.title }}</a></h2>
+    		<p>{{ post.text|linebreaks }}</p>
+    	</div>
+    	{% endfor %}
     </body>
 
 </html>
